@@ -14,4 +14,5 @@ const carroAmarelo2 = new criaCarros(yInicial[5]);
 //Agrupando carros na array
 const carros = [carroVerde1, carroPreto1, carroAmarelo1, carroVerde2, carroPreto2, carroAmarelo2];
 
+
 export default carros

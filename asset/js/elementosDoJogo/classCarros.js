@@ -1,7 +1,7 @@
 export default class criaCarros {
     constructor(yInicial){
         this.yInicial = yInicial;
-        this._xInicial = 1000;
+        this._xInicial = 1090;
         this._comprimento = 70;
         this._altura = 50;
         this._velocidade = 0;
@@ -11,6 +11,7 @@ export default class criaCarros {
     get altura() {return this._altura};
     get velocidade() {return this._velocidade};
 
+    set xInicial(xInicial) {this._xInicial = xInicial};
     set velocidade(velocidade) { this._velocidade = velocidade};
 }
 

@@ -1,6 +1,7 @@
 import cenario from "./elementosDoJogo/Cenario.js";
 import vaquinha from "./elementosDoJogo/vaquinha.js";
 import carros from "./elementosDoJogo/carros.js";
+import movimentaCarros from "./elementosDoJogo/movimentaCarros.js";
 
 // Criando canvas
 const canvas = document.querySelector('canvas');
@@ -23,6 +24,7 @@ function desenhaVaquinha(){
 
     //Desenha a vaquinha
     contexto.drawImage(imgVaquinha, vaquinha.xInicial, vaquinha.yInicial, vaquinha.comprimento, vaquinha.altura);
+
 }
 
 
@@ -39,11 +41,13 @@ function desenhaCarros(){
     //Desenha os carros
     for(let i = 0; i < carros.length; i++){
         contexto.drawImage(listaImgCarros[i], carros[i].xInicial, carros[i].yInicial, carros[i].comprimento, carros[i].altura);
-    }   
+    } 
+    
 }
 
 //Desenhando o jogo
 function loop(){
+    movimentaCarros();
     desenhaCenario();
     desenhaVaquinha();
     desenhaCarros();
