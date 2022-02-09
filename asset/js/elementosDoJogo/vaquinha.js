@@ -1,12 +1,9 @@
-
-import personagem from "./Personagem.js"
-
-let atributosVaquinha =  () => {
-    let sera = new personagem(500, 605, 40, 40);
-    return sera;
+const vaquinha = {
+    xInicial: 500,
+    yInicial: 605,
+    comprimento: 40,
+    altura: 40,
+    velocidade: 0
 }
-
-const vaquinha = atributosVaquinha();
-
 export default vaquinha
 
