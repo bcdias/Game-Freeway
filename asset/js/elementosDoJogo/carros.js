@@ -1,7 +1,7 @@
 import criaCarros from "./classCarros.js";
 
 //Y dos carros
-const yInicial = [115, 200, 285, 370, 455, 540]
+const yInicial = [65, 160, 255, 345, 435, 525]
 
 //Criando os carros
 const carroVerde1 = new criaCarros(yInicial[0]);

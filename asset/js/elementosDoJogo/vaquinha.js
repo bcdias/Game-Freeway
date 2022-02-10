@@ -3,7 +3,8 @@ const vaquinha = {
     yInicial: 605,
     comprimento: 40,
     altura: 40,
-    velocidade: 0
+    velocidade: 2,
 }
+
 export default vaquinha
 
