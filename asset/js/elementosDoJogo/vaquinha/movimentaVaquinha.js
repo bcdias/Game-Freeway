@@ -35,4 +35,8 @@ let movimentaVaquinha = () => {
     // if(vaquinha.yInicial <= 0) retornaVaquinha();
 }
 
-export default movimentaVaquinha
+const voltaVaquinha = () =>{
+    return vaquinha.yInicial = 605;
+}
+
+export  {movimentaVaquinha, voltaVaquinha}

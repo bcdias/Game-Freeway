@@ -1,4 +1,4 @@
-export default class criaCarros {
+class criaCarros {
     constructor(yInicial){
         this.yInicial = yInicial;
         this._xInicial = 1090;
@@ -15,3 +15,4 @@ export default class criaCarros {
     set velocidade(velocidade) { this._velocidade = velocidade};
 }
 
+export default criaCarros

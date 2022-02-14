@@ -1,9 +1,11 @@
 import cenario from "./elementosDoJogo/Cenario.js";
-import vaquinha from "./elementosDoJogo/vaquinha.js";
-import carros from "./elementosDoJogo/carros.js";
-import movimentaCarros from "./elementosDoJogo/movimentaCarros.js";
-import movimentaVaquinha from "./elementosDoJogo/movimentaVaquinha.js";
-import marcaPonto from "./elementosDoJogo/marcaPontos.js";
+import vaquinha from "./elementosDoJogo/vaquinha/vaquinha.js";
+import carros from "./elementosDoJogo/carro/carros.js";
+import movimentaCarros from "./elementosDoJogo/carro/movimentaCarros.js";
+import { movimentaVaquinha } from "./elementosDoJogo/vaquinha/movimentaVaquinha.js";
+import { marcaPonto } from "./elementosDoJogo/marcaPontos.js";
+import { placar } from "./elementosDoJogo/marcaPontos.js";
+import colidiu from "./elementosDoJogo/colisao.js";
 
 // Criando canvas
 const canvas = document.querySelector('canvas');
@@ -48,16 +50,16 @@ function desenhaCarros(){
 }
 
 // Desenha placar
-let pontos = 0;
 function desenhaPlacar(){
     contexto.fillStyle = 'yellow';
     contexto.font =  '48px serif';
-    contexto.fillText(pontos, 100, 45);
+    contexto.fillText(placar.pontos, placar.xPlacar, placar.yPlacar);
 }
  
 //Desenhando o jogo
 function loop(){
-    pontos = marcaPonto(vaquinha.yInicial);
+    colidiu();
+    marcaPonto();
     movimentaVaquinha();
     movimentaCarros();
     desenhaCenario();

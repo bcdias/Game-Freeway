@@ -1,15 +1,32 @@
-import vaquinha from "./vaquinha.js";
+import { voltaVaquinha } from "./vaquinha/movimentaVaquinha.js";
+import vaquinha from "./vaquinha/vaquinha.js";
 
 
-let pontos = 0
-function marcaPonto(yVaquinha){
-    if(yVaquinha <= 0){
-        pontos += 1;
-        vaquinha.yInicial = 605;
-    }
-    return pontos
+const placar = {
+    pontos: 0,
+    xPlacar: 100,
+    yPlacar: 45,
 }
 
-export default marcaPonto
+function marcaPonto(){
+    if(vaquinha.yInicial <= 0){
+        somaPonto();
+        voltaVaquinha();
+    }
+    return placar.pontos;
+}
+
+
+const somaPonto = () => {
+    return placar.pontos += 1;
+}
+
+const descontaPonto = () => {
+    if(placar.pontos > 0){
+        return placar.pontos -= 1;
+    }
+}
+
+export { marcaPonto, placar, descontaPonto }
 
 
