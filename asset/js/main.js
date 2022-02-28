@@ -6,6 +6,8 @@ import { movimentaVaquinha } from "./elementosDoJogo/vaquinha/movimentaVaquinha.
 import { marcaPonto } from "./elementosDoJogo/marcaPontos.js";
 import { placar } from "./elementosDoJogo/marcaPontos.js";
 import colidiu from "./elementosDoJogo/colisao.js";
+import { musicaFundo } from "./sons.js";
+
 
 // Criando canvas
 const canvas = document.querySelector('canvas');
@@ -58,6 +60,7 @@ function desenhaPlacar(){
  
 //Desenhando o jogo
 function loop(){
+    musicaFundo.play();
     colidiu();
     marcaPonto();
     movimentaVaquinha();
@@ -67,5 +70,7 @@ function loop(){
     desenhaCarros();
     desenhaPlacar();
     requestAnimationFrame(loop);
+    
 }
 loop();
+

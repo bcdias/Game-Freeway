@@ -1,3 +1,4 @@
+import { somPonto } from "../sons.js";
 import { voltaVaquinha } from "./vaquinha/movimentaVaquinha.js";
 import vaquinha from "./vaquinha/vaquinha.js";
 
@@ -10,6 +11,7 @@ const placar = {
 
 function marcaPonto(){
     if(vaquinha.yInicial <= 0){
+        somPonto.play()
         somaPonto();
         voltaVaquinha();
     }
